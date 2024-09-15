@@ -7,29 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="#D20D3901"
+        android:background="#047022"
+        android:elevation="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
         <Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:elevation="60dp">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left">
-
-
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             </LinearLayout>
         </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+    </androidx.cardview.widget.CardView>
 
     <fragment
         android:id="@+id/host"
@@ -40,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:layout_constraintTop_toBottomOf="@+id/appBar1"
         app:navGraph="@navigation/nav_graph"/>
 
 </RelativeLayout>

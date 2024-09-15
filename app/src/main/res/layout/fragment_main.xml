@@ -9,61 +9,64 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
-        android:layout_marginTop="80dp"
         android:padding="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/feildseye"
             android:layout_width="match_parent"
             android:layout_height="290dp"
-            android:elevation="8dp"
+            android:elevation="9dp"
             app:cardCornerRadius="24dp">
 
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/feildseye"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/feildseye" />
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="3dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:padding="3dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/soilmoisture"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/soilwaterpump"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/soilagriguide"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/soilagriguide"
+                app:layout_constraintEnd_toStartOf="@id/soilwaterpump"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/soilmoisturebtn"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/soilmoisturebtn" />
+
                     <TextView
                         android:id="@+id/moisture"
                         android:layout_width="match_parent"
                         android:layout_height="37dp"
-                        android:text="Moisture"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
-                        android:gravity="center|top"
                         android:layout_margin="8dp"
-                        android:elevation="4dp"/>
+                        android:elevation="4dp"
+                        android:gravity="center|top"
+                        android:text="Moisture"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -71,33 +74,36 @@
                 android:id="@+id/soilwaterpump"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/soilmoisture"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toTopOf="@id/soilagriloans"
-                android:layout_marginHorizontal="10dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/soilmoisture"
+                app:layout_constraintTop_toTopOf="parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/waterpump"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/waterpump" />
+
                     <TextView
                         android:id="@+id/waterpump"
                         android:layout_width="match_parent"
                         android:layout_height="37dp"
-                        android:text="Water Pump"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
-                        android:gravity="center|top"
                         android:layout_margin="8dp"
-                        android:elevation="4dp"/>
+                        android:elevation="4dp"
+                        android:gravity="center|top"
+                        android:text="Water Pump"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -105,33 +111,36 @@
                 android:id="@+id/soilagriguide"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/soilagriloans"
-                app:layout_constraintTop_toBottomOf="@id/soilmoisture"
-                app:layout_constraintBottom_toTopOf="@id/birdsCardView"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/birdsCardView"
+                app:layout_constraintEnd_toStartOf="@id/soilagriloans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/soilmoisture">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/guideagri"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/guideagri" />
+
                     <TextView
                         android:id="@+id/agriguide"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:text="Agri Guide"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
-                        android:gravity="center|top"
                         android:layout_margin="8dp"
-                        android:elevation="4dp"/>
+                        android:elevation="4dp"
+                        android:gravity="center|top"
+                        android:text="Agri Guide"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -139,33 +148,36 @@
                 android:id="@+id/soilagriloans"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/soilagriguide"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/soilwaterpump"
-                app:layout_constraintBottom_toTopOf="@id/birdsCardView"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/birdsCardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/soilagriguide"
+                app:layout_constraintTop_toBottomOf="@id/soilwaterpump">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/agriloans"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/agriloans" />
+
                     <TextView
                         android:id="@+id/agriloans"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:text="Agri Loans"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
-                        android:gravity="center|top"
                         android:layout_margin="8dp"
-                        android:elevation="4dp"/>
+                        android:elevation="4dp"
+                        android:gravity="center|top"
+                        android:text="Agri Loans"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -173,32 +185,35 @@
                 android:id="@+id/birdsCardView"
                 android:layout_width="0dp"
                 android:layout_height="65dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/soilagriguide"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginHorizontal="10dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/soilagriguide">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/birdsText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Birds Alarm"
-                        android:textStyle="bold"
-                        android:textSize="25dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="40dp"
-                        android:elevation="4dp"/>
+                        android:elevation="4dp"
+                        android:text="Birds Alarm"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_gravity="right"
                         android:layout_marginLeft="80dp"
-                        android:src="@drawable/bridsalarm"
-                        android:layout_gravity="right"/>
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/bridsalarm" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

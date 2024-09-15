@@ -9,6 +9,100 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.rohit.feildseye.fragments.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="Fields Eye"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_agriguideFragment"
+            app:destination="@id/agriguideFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_agriloansFragment"
+            app:destination="@id/agriloansFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/agriguideFragment"
+        android:name="com.rohit.feildseye.fragments.AgriguideFragment"
+        android:label="Agri Guide"
+        tools:layout="@layout/fragment_agriguide"
+        />
+
+
+    <fragment
+        android:id="@+id/agriloansFragment"
+        android:name="com.rohit.feildseye.fragments.AgriloansFragment"
+        android:label="Agri Loans"
+        tools:layout="@layout/fragment_agriloans">
+        <action
+            android:id="@+id/action_agriloansFragment_to_yojnaFragment"
+            app:destination="@id/yojnaFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriloansFragment_to_yojnaFragment1"
+            app:destination="@id/yojna1Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriloansFragment_to_yojnaFragment2"
+            app:destination="@id/yojna2Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriloansFragment_to_yojnaFragment3"
+            app:destination="@id/yojna3Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/yojnaFragment"
+        android:name="com.rohit.feildseye.fragments.YojnaFragment"
+        android:label="fragment_yojna"
+        tools:layout="@layout/fragment_yojna"
+        />
+    <fragment
+        android:id="@+id/yojna1Fragment"
+        android:name="com.rohit.feildseye.fragments.Yojna1Fragment"
+        android:label="Yojna1Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out"
+        />
+    <fragment
+        android:id="@+id/yojna2Fragment"
+        android:name="com.rohit.feildseye.fragments.Yojna2Fragment"
+        android:label="Yojna2Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out"
+        />
+    <fragment
+        android:id="@+id/yojna3Fragment"
+        android:name="com.rohit.feildseye.fragments.Yojna3Fragment"
+        android:label="Yojna3Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out"
+        />
 </navigation>

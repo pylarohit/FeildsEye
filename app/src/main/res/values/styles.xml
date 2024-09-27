@@ -1,0 +1,8 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="RatingBar" >
+        <item name="colorControlActivated">#79C551</item>
+        <item name="colorControlNormal">@color/secondary2</item>
+    </style>
+
+</resources>

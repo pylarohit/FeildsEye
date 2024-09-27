@@ -1,8 +1,10 @@
 package com.rohit.feildseye
 
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -18,5 +20,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        setSupportActionBar(binding?.toolBar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.host) as NavHostFragment
+        navController = navHostFragment.navController
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.mainFragment -> binding?.tittleToolbar?.setText("Fields Eye")
+                R.id.agriloansFragment -> binding?.tittleToolbar?.setText("Agri Loans")
+                R.id.agriguideFragment -> binding?.tittleToolbar?.setText("Agri Guide")
+            }
+        }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp() || navController.popBackStack()
     }
 }

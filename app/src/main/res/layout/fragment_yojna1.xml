@@ -30,7 +30,7 @@
                 <ImageView
                     android:scaleType="fitXY"
                     android:id="@+id/yojnaImg"
-                    android:src="@drawable/loans"
+                    android:src="@drawable/pfby"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -63,8 +63,8 @@
                     android:layout_marginLeft="7dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jal shakti Mantralaya"
-                    android:textSize="18sp"
+                    android:text="Ministry of Agriculture Farmers Welfare."
+                    android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@id/ministry"
                     app:layout_constraintTop_toTopOf="@id/ministry"
                     app:layout_constraintBottom_toBottomOf="@id/ministry"/>
@@ -88,7 +88,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2600 Crore"
+                    android:text="1,25,035.79 crore"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@id/Budget1"
                     app:layout_constraintTop_toTopOf="@id/Budget1"
@@ -154,7 +154,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="
+- Providing financial assistance to farmers for crop losses due to natural calamities, pests, and diseases. \n\n
+- Keeping farmers' income stable, so that they continue in farming.\n\n
+- Encouraging farmers to adopt modern agricultural practices.\n\n
+- Ensuring flow of credit to the agriculture sector.\n\n
+- Ensuring food security.\n\n
+- Promoting crop diversification.\n\n
+- Enhancing the growth and competitiveness of the agricultural sector"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/objectiveofscheme"
 
@@ -177,7 +184,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="
+* Identity proof: Aadhaar card, PAN card, voter ID, driving license, or passport.\n\n
+* Address proof: Aadhaar card, voter ID, driving license, passport, or electricity bill.\n\n
+* Passport-sized photograph: Of the insured farmer.\n\n
+* Land ownership documents: Records of Right (RoR), Land Possession Certificate (LPC), or other applicable agreements.\n\n
+* Bank account details: Bank passbook with the farmer's name and account number or IFSC code.\n\n
+* Crop sowing certificate: If required by the state government.\n\n
+* Khasra and account number: If the farmer owns the field.\n\n
+* Evidence of crop sowing: A letter from the Pradhan, Sarpanch, Goan Pradhan, or Patwari."
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/RequiredDocumenttoApply"
 
@@ -200,7 +215,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="
+- Be a farmer: The scheme covers all farmers, including sharecroppers and tenant farmers.\n\n
+- Grow notified crops: Farmers must grow crops that are notified by the state government.\n\n
+- Have an insurable interest: Farmers must have an insurable interest in the crops they are growing.\n\n
+- Have valid land records: Non-loanee farmers must have valid land records, such as a Land Possession Certificate (LPC) or Records of Right (RoR). "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/EligibilityCriteria"
 

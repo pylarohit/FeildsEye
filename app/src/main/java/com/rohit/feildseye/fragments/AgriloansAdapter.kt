@@ -57,11 +57,19 @@ class AgriloansAdapter(private val loansList: List<String>) :
         fun bind(loan: String) {
             if(position == 0) {
                 loanTitleTextView.text = loan
-                loanDateTextView.text = "21 August 2021" // You can set this dynamically if needed
-                loanImageView.setImageResource(R.drawable.loans) // Ensure the drawable exists in your project
+                loanDateTextView.text = "21 january 2019"
+                loanImageView.setImageResource(R.drawable.loans)
             }else if (position == 1){
-                loanTitleTextView.text = loan
-                loanDateTextView.text = "22 August 2021" // You can set this dynamically if needed
+                loanTitleTextView.text = "Pradhan Mantri Fasal Bima Yojana"
+                loanDateTextView.text = "22 August 2021"
+                loanImageView.setImageResource(R.drawable.loans)
+            }else if (position == 2){
+                loanTitleTextView.text = "Soil Health Management Scheme"
+                loanDateTextView.text = "3 December 2021"
+                loanImageView.setImageResource(R.drawable.loans)
+            }else if (position == 3){
+                loanTitleTextView.text = "Paramparagat Krishi Vikas Yojana"
+                loanDateTextView.text = "15 june 2020"
                 loanImageView.setImageResource(R.drawable.loans)
             }
 

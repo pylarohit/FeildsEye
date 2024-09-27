@@ -9,7 +9,6 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.rohit.feildseye.fragments.MainFragment"
-        android:label="Fields Eye"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_agriguideFragment"
@@ -31,7 +30,6 @@
     <fragment
         android:id="@+id/agriguideFragment"
         android:name="com.rohit.feildseye.fragments.AgriguideFragment"
-        android:label="Agri Guide"
         tools:layout="@layout/fragment_agriguide"
         />
 
@@ -39,7 +37,6 @@
     <fragment
         android:id="@+id/agriloansFragment"
         android:name="com.rohit.feildseye.fragments.AgriloansFragment"
-        android:label="Agri Loans"
         tools:layout="@layout/fragment_agriloans">
         <action
             android:id="@+id/action_agriloansFragment_to_yojnaFragment"

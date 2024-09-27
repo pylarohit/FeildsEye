@@ -30,7 +30,7 @@
                 <ImageView
                     android:scaleType="fitXY"
                     android:id="@+id/yojnaImg"
-                    android:src="@drawable/loans"
+                    android:src="@drawable/nmfs"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
                     app:layout_constraintStart_toStartOf="parent"

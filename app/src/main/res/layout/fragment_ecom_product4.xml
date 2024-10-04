@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="80dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EcomProduct4Fragment">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/seeding"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/seeding1"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/seeding2"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="0.5dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/ecommbackground"
+            android:elevation="1dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="14dp">
+
+                <TextView
+                    android:id="@+id/productTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Agriculture Seeder"
+                    android:textColor="@color/greenDark"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/productShortDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="An Agriculture Seeder is a tool that efficiently plants seeds with precision, ensuring uniform placement and improved crop yields."
+                    android:textColor="@color/fontColor"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productTitle" />
+
+                <TextView
+                    android:id="@+id/productPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="₹ 75000.00 INR"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
+
+                <View
+                    android:id="@+id/hr1EcommItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productPrice" />
+
+                <TextView
+                    android:id="@+id/productLongDescTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Product Description"
+                    android:textColor="@color/fontColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
+                <TextView
+                    android:id="@+id/productLongDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="An Agriculture Seeder is a farming tool used to plant seeds uniformly and efficiently across fields. It ensures precise seed placement and depth, improving germination rates and crop yields while reducing labor and seed wastage.An Agriculture Seeder is a specialized farming implement designed to plant seeds accurately and efficiently across large areas.\n It is commonly attached to tractors and is equipped with mechanisms to ensure that seeds are placed at the correct depth, spacing, and row alignment. Depending on the type of seeder, it can be adjusted to plant a variety of crops like grains, vegetables, or legumes."
+                    android:textColor="@color/fontColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productLongDescTitle" />
+                <TextView
+                    android:id="@+id/howToUseLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="7dp"
+                    android:text="Types of Seeder"
+                    android:textSize="18sp"
+                    android:textColor="@color/fontColor"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productLongDesc"
+                    />
+                <TextView
+                    android:id="@+id/howToUseText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="7dp"
+                    android:text="Broadcast Seeder: Scatters seeds over a large area, typically used for crops that don't require precise spacing, such as grasses.\n\n
+1.Row Seeder: Plants seeds in evenly spaced rows, ideal for crops like corn, wheat, and soybeans.\n\n
+2.Air Seeder: Uses air pressure to blow seeds into the soil, providing high-speed, large-scale planting for grains and oilseeds.\n\n
+3.Precision Seeder: Ensures that each seed is placed at an exact location, reducing seed wastage and improving germination rates.\n\n
+Agriculture seeders help improve planting efficiency, reduce labor costs, and ensure optimal seed distribution for maximum crop yield.\n\n"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

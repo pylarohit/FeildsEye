@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.mainFragment -> binding?.tittleToolbar?.setText("Fields Eye")
                 R.id.agriloansFragment -> binding?.tittleToolbar?.setText("Agri Loans")
                 R.id.agriguideFragment -> binding?.tittleToolbar?.setText("Agri Guide")
+                R.id.ecomProductFragment -> binding?.tittleToolbar?.setText("Agri Products")
             }
         }
     }

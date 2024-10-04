@@ -2,4 +2,8 @@
     <string name="app_name">Fields Eye</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recommending_crops">We suggest some crops that suit you by identifying your location, soil type, and air temperature around you</string>
+    <string name="crops_we_recommend">Crops we Recommend</string>
+    <string name="soil_fertilizer_content">We detect your crop and suggest appropriate fertilizers by identifying your location, soil type, air temperature around you, and the cultivated crop.</string>
+    <string name="soil_suitability_content">We help you judge whether the soil is suitable for cultivation or not by analyzing it</string>
 </resources>

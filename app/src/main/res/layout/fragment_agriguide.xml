@@ -11,11 +11,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- TODO: Update blank fragment layout -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="100dp"
+                android:paddingBottom="100dp"
                 android:paddingHorizontal="8dp">
 
                 <androidx.cardview.widget.CardView
@@ -134,7 +135,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
-
                             android:layout_marginVertical="10dp">
 
                             <LinearLayout
@@ -143,19 +143,20 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="100dp"
+                                    android:layout_width="124dp"
                                     android:layout_height="100dp"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/plant3" />
+                                    android:src="@drawable/cropreccomend" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Plants"
+                                    android:textAlignment="center"
+                                    android:text="Crop\nrecommendation"
                                     android:textColor="@color/fontColor"
                                     android:layout_marginVertical="7dp"
-                                    android:textSize="14sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -173,19 +174,20 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="100dp"
+                                    android:layout_width="124dp"
                                     android:layout_height="100dp"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/method2" />
+                                    android:src="@drawable/soilfertilizer" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/fontColor"
                                     android:layout_gravity="center"
-                                    android:text="Methods"
+                                    android:text="Soil \nFertilizer"
+                                    android:textAlignment="center"
                                     android:layout_marginVertical="7dp"
-                                    android:textSize="14sp"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -203,10 +205,10 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="100dp"
+                                    android:layout_width="124dp"
                                     android:layout_height="100dp"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/disease" />
+                                    android:src="@drawable/soilsuitable" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -214,8 +216,9 @@
                                     android:textColor="@color/fontColor"
                                     android:layout_marginVertical="7dp"
                                     android:layout_gravity="center"
-                                    android:text="Diseases"
-                                    android:textSize="14sp"
+                                    android:textAlignment="center"
+                                    android:text="Soil \nSuitability"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -277,18 +280,16 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/carousel" />
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/dashboardEcommRecycler"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/productsTitle"
-                    android:layout_marginVertical="7dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    />
 
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ecommrcyclr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="7dp"
+                        android:paddingTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/productsTitle"
+                        app:layout_constraintEnd_toEndOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </FrameLayout>

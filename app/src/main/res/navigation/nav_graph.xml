@@ -30,8 +30,65 @@
     <fragment
         android:id="@+id/agriguideFragment"
         android:name="com.rohit.feildseye.fragments.AgriguideFragment"
-        tools:layout="@layout/fragment_agriguide"
-        />
+        tools:layout="@layout/fragment_agriguide">
+        <action
+            android:id="@+id/action_agriguideFragment_to_ecomProductFragment"
+            app:destination="@id/ecomProductFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_ecomProduct1Fragment"
+            app:destination="@id/ecomProduct1Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_ecomProduct2Fragment"
+            app:destination="@id/ecomProduct2Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_ecomProduct3Fragment"
+            app:destination="@id/ecomProduct3Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_ecomProduct4Fragment"
+            app:destination="@id/ecomProduct4Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_RecommendFragment"
+            app:destination="@id/recommendFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_SoilFertilizerFragment"
+            app:destination="@id/soilFertilizerFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_agriguideFragment_to_SoilQualityFragment"
+            app:destination="@id/soilQualityFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+
+    </fragment>
 
 
     <fragment
@@ -66,6 +123,7 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"/>
+
     </fragment>
 
 
@@ -102,4 +160,45 @@
         app:popEnterAnim="@android:anim/fade_in"
         app:popExitAnim="@android:anim/fade_out"
         />
+    <fragment
+        android:id="@+id/ecomProductFragment"
+        android:name="com.rohit.feildseye.fragments.EcomProductFragment"
+        android:label="fragment_ecom_product"
+        tools:layout="@layout/fragment_ecom_product" />
+    <fragment
+        android:id="@+id/ecomProduct1Fragment"
+        android:name="com.rohit.feildseye.fragments.EcomProduct1Fragment"
+        android:label="fragment_ecom_product1"
+        tools:layout="@layout/fragment_ecom_product1" />
+    <fragment
+        android:id="@+id/ecomProduct2Fragment"
+        android:name="com.rohit.feildseye.fragments.EcomProduct2Fragment"
+        android:label="fragment_ecom_product2"
+        tools:layout="@layout/fragment_ecom_product2" />
+    <fragment
+        android:id="@+id/ecomProduct3Fragment"
+        android:name="com.rohit.feildseye.fragments.EcomProduct3Fragment"
+        android:label="fragment_ecom_product3"
+        tools:layout="@layout/fragment_ecom_product3" />
+    <fragment
+        android:id="@+id/ecomProduct4Fragment"
+        android:name="com.rohit.feildseye.fragments.EcomProduct4Fragment"
+        android:label="fragment_ecom_product4"
+        tools:layout="@layout/fragment_ecom_product4" />
+    <fragment
+        android:id="@+id/recommendFragment"
+        android:name="com.rohit.feildseye.fragments.RecommendFragment"
+        android:label="fragment_recommend"
+        tools:layout="@layout/fragment_recommend" />
+    <fragment
+        android:id="@+id/soilFertilizerFragment"
+        android:name="com.rohit.feildseye.fragments.SoilFertilizerFragment"
+        android:label="fragment_soil_fertilizer"
+        tools:layout="@layout/fragment_soil_fertilizer" />
+    <fragment
+        android:id="@+id/soilQualityFragment"
+        android:name="com.rohit.feildseye.fragments.SoilQualityFragment"
+        android:label="fragment_soil_quality"
+        tools:layout="@layout/fragment_soil_quality" />
+
 </navigation>

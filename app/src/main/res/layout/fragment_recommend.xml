@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.RecommendFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.activity.CropSafetyActivity">
+
+        <ImageView
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/path_1903"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/crops_we_recommend"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:gravity="center"
+            android:paddingHorizontal="30dp"
+            android:text="@string/recommending_crops"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <ScrollView
+            android:id="@+id/progress_flow"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/recommendButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/top_bar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/pRatio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text"
+                        android:hint="P %"
+                        android:layout_weight="1"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:padding="15dp"
+                        android:textColorHint="@color/hint"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/kRatio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:background="@drawable/edit_text"
+                        android:hint="K %"
+                        android:layout_weight="1"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:padding="15dp"
+                        android:textColorHint="@color/hint"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/nRatio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text"
+                        android:hint="N %"
+                        android:layout_weight="1"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:padding="15dp"
+                        android:textColorHint="@color/hint"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/phRatio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:background="@drawable/edit_text"
+                        android:hint="PH %"
+                        android:layout_weight="1"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:padding="15dp"
+                        android:textColorHint="@color/hint"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/temprature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@drawable/edit_text"
+                    android:hint="Temperature"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
+                    android:textColorHint="@color/hint"
+                    android:textSize="14sp"
+                    android:layout_marginTop="22dp" />
+
+                <EditText
+                    android:id="@+id/humidity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@drawable/edit_text"
+                    android:hint="Humidity"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
+                    android:textColorHint="@color/hint"
+                    android:textSize="14sp"
+                    android:layout_marginTop="22dp" />
+
+                <EditText
+                    android:id="@+id/rainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@drawable/edit_text"
+                    android:hint="Rainfall"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:padding="15dp"
+                    android:textColorHint="@color/hint"
+                    android:textSize="14sp"
+                    android:layout_marginTop="22dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/recommendButton"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="Recommend"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/progress_flow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

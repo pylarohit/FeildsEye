@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="80dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EcomProductFragment">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+    android:scrollbars="none">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/tractor"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tractor2"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/tractor3"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
+</LinearLayout>
+</HorizontalScrollView>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginHorizontal="0.5dp"
+    android:layout_marginTop="250dp"
+android:background="@drawable/ecommbackground"
+android:elevation="1dp"
+android:fillViewport="true"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="14dp">
+
+    <!-- Product Title -->
+    <TextView
+        android:id="@+id/productTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Agriculture Tractor"
+        android:textColor="@color/greenDark"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Short Description -->
+    <TextView
+        android:id="@+id/productShortDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="A tractor is a versatile, powerful vehicle used in agriculture for tasks like plowing, tilling, and hauling."
+        android:textColor="@color/fontColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productTitle" />
+
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="₹ 2.4lakh~33.9lakh"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
+
+    <View
+        android:id="@+id/hr1EcommItem"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productPrice" />
+
+    <!-- Long Description Title -->
+    <TextView
+        android:id="@+id/productLongDescTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Product Description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
+    <TextView
+        android:id="@+id/productLongDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="A tractor is a robust agricultural machine designed to perform various tasks such as plowing, tilling, planting, and hauling. Built for durability and efficiency, it features a powerful engine, large rear wheels for enhanced traction, and advanced hydraulic systems for operating attachments like plows, seeders, and harvesters. Modern tractors often come equipped with GPS and automation technology, allowing for precision farming and increased productivity. Available in various models and sizes, tractors are essential for both small-scale and large-scale farming operations."
+        android:textColor="@color/fontColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productLongDescTitle" />
+    <TextView
+        android:id="@+id/howToUseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:text="How to Use?"
+        android:textSize="18sp"
+        android:textColor="@color/greenDark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productLongDesc"
+         />
+    <TextView
+        android:id="@+id/howToUseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:text="Using a tractor involves several steps to ensure safe and effective operation:\n
+
+1.Familiarize Yourself: Read the tractor's manual to understand its controls, safety features, and attachments.\n\n
+
+2.Inspect the Tractor: Check fuel, oil levels, tire pressure, and hydraulic systems before use. Ensure all safety guards are in place.\n\n
+
+3.Start the Tractor: Enter the tractor seat, fasten the seatbelt, and ensure the gear is in neutral. Insert the key and turn it to start the engine.\n\n
+
+4.Attach Implements: Secure any attachments (like plows, seeders, or trailers) to the tractor's hitch or hydraulic system.\n\n
+
+5.Control the Tractor: Use the steering wheel to navigate, the pedals to control speed, and the gear lever to adjust the tractor's range of motion (forward, reverse, or stationary).\n\n
+
+6.Operate the Implement: Engage the Power Take-Off (PTO) or hydraulic system to power the attached implement and begin working the field.\n\n
+
+7.Turn Off the Tractor: After use, disengage the implement, turn off the PTO, and power down the tractor.\n\n
+
+8.Perform Maintenance: After using the tractor, clean off debris, check fluids, and store it in a sheltered area.\n\n"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>

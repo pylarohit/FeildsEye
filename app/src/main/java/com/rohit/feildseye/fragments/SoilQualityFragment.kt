@@ -57,7 +57,6 @@ class SoilQualityFragment : Fragment() {
     }
 
     private fun checkSoilHealth() {
-        // Collect data from the EditText fields
         val ec = ecEditText.text.toString().toDoubleOrNull() ?: 0.0
         val oc = ocEditText.text.toString().toDoubleOrNull() ?: 0.0
         val n = nEditText.text.toString().toDoubleOrNull() ?: 0.0
@@ -71,84 +70,67 @@ class SoilQualityFragment : Fragment() {
         val mn = mnEditText.text.toString().toDoubleOrNull() ?: 0.0
         val b = bEditText.text.toString().toDoubleOrNull() ?: 0.0
 
-        // Variables to determine overall suitability and health
         var isSuitableForCultivation = true
         val soilHealth = StringBuilder()
 
-        // EC (Electrical Conductivity) check
-        when {
-            ec < 0.5 -> {
-                soilHealth.append("Low EC: Soil may lack sufficient nutrients.\n")
-                isSuitableForCultivation = false
-            }
-            ec > 2.0 -> {
-                soilHealth.append("High EC: Soil salinity is too high.\n")
-                isSuitableForCultivation = false
-            }
-        }
+        // EC (Electrical Conductivity)
+        soilHealth.append("EC: ${evaluateSoilCondition(ec, 0.5, 2.0)}\n")
+        if (ec < 0.5 || ec > 2.0) isSuitableForCultivation = false
 
-        // Organic Carbon (OC) check
-        if (oc < 0.4 || oc > 1.0) {
-            soilHealth.append("Organic Carbon level is not optimal.\n")
-            isSuitableForCultivation = false
-        }
+        // Organic Carbon (OC)
+        soilHealth.append("OC: ${evaluateSoilCondition(oc, 0.4, 1.0)}\n")
+        if (oc < 0.4 || oc > 1.0) isSuitableForCultivation = false
 
-        // Nitrogen (N) check
-        if (n < 0.1 || n > 0.5) {
-            soilHealth.append("Nitrogen level is not optimal.\n")
-            isSuitableForCultivation = false
-        }
+        // Nitrogen (N)
+        soilHealth.append("N: ${evaluateSoilCondition(n, 0.1, 0.5)}\n")
+        if (n < 0.1 || n > 0.5) isSuitableForCultivation = false
 
-        // Phosphorus (P) check
-        if (p < 0.05 || p > 0.3) {
-            soilHealth.append("Phosphorus level is not optimal.\n")
-            isSuitableForCultivation = false
-        }
+        // Phosphorus (P)
+        soilHealth.append("P: ${evaluateSoilCondition(p, 0.05, 0.3)}\n")
+        if (p < 0.05 || p > 0.3) isSuitableForCultivation = false
 
-        // Potassium (K) check
-        if (k < 0.1 || k > 1.0) {
-            soilHealth.append("Potassium level is not optimal.\n")
-            isSuitableForCultivation = false
-        }
+        // Potassium (K)
+        soilHealth.append("K: ${evaluateSoilCondition(k, 0.1, 1.0)}\n")
+        if (k < 0.1 || k > 1.0) isSuitableForCultivation = false
 
-        // pH check
-        if (ph < 6.0 || ph > 7.0) {
-            soilHealth.append("pH level is not suitable.\n")
-            isSuitableForCultivation = false
-        }
+        // pH
+        soilHealth.append("pH: ${evaluateSoilCondition(ph, 6.0, 7.0)}\n")
+        if (ph < 6.0 || ph > 7.0) isSuitableForCultivation = false
 
-        // Sulfur (S) check
-        if (s < 0.1 || s > 1.0) {
-            soilHealth.append("Sulfur level is not optimal.\n")
-            isSuitableForCultivation = false
-        }
+        // Sulfur (S)
+        soilHealth.append("S: ${evaluateSoilCondition(s, 0.1, 1.0)}\n")
+        if (s < 0.1 || s > 1.0) isSuitableForCultivation = false
 
-        // Micronutrients check
-        val micronutrientStatus = arrayOf(
-            zn to "Zinc", fe to "Iron", cu to "Copper", mn to "Manganese", b to "Boron"
-        )
-        micronutrientStatus.forEach { (level, nutrient) ->
-            if (level < 0.1 || level > 1.0) {
-                soilHealth.append("$nutrient level is not optimal.\n")
-                isSuitableForCultivation = false
-            }
-        }
+        // Micronutrients
+        soilHealth.append("Zn: ${evaluateSoilCondition(zn, 0.1, 1.0)}\n")
+        soilHealth.append("Fe: ${evaluateSoilCondition(fe, 0.1, 1.0)}\n")
+        soilHealth.append("Cu: ${evaluateSoilCondition(cu, 0.1, 1.0)}\n")
+        soilHealth.append("Mn: ${evaluateSoilCondition(mn, 0.1, 1.0)}\n")
+        soilHealth.append("B: ${evaluateSoilCondition(b, 0.1, 1.0)}\n")
 
-        // Determine final soil health message
         val suitabilityMessage = if (isSuitableForCultivation) {
             "The soil is suitable for cultivation."
         } else {
             "The soil is not suitable for cultivation."
         }
 
-        // Show result in an AlertDialog
         showSoilHealthDialog(suitabilityMessage, soilHealth.toString())
+    }
+
+    private fun evaluateSoilCondition(value: Double, min: Double, max: Double): String {
+        return when {
+            value < min -> "Poor"
+            value in min..(min + (max - min) / 3) -> "Moderate"
+            value in (min + (max - min) / 3)..(min + 2 * (max - min) / 3) -> "Good"
+            value <= max -> "Excellent"
+            else -> "Too High"
+        }
     }
 
     private fun showSoilHealthDialog(suitabilityMessage: String, soilHealthDetails: String) {
         val alertDialog = AlertDialog.Builder(requireContext())
         alertDialog.setTitle("Soil Health Assessment")
-        alertDialog.setMessage("$suitabilityMessage\n\n$soilHealthDetails")
+        alertDialog.setMessage("$suitabilityMessage\n\nSoil Condition Breakdown:\n$soilHealthDetails")
         alertDialog.setPositiveButton("OK") { dialog, _ ->
             dialog.dismiss()
         }

@@ -72,6 +72,7 @@
                     android:textColor="@color/greenDark"
                     android:textSize="21sp"
                     android:textStyle="bold"
+                    android:fontFamily="@font/ebnormal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -84,6 +85,8 @@
                     android:text="An agriculture drone is an unmanned aerial vehicle used for crop monitoring, precision farming, and applying inputs like fertilizers and pesticides."
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productTitle" />
@@ -96,6 +99,7 @@
                     android:text="₹ 39,001.00 ~ 7.5lakh"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
@@ -115,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
                     android:text="Product Description"
+                    android:fontFamily="@font/ebnormal"
                     android:textColor="@color/fontColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -125,6 +130,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="18dp"
                     android:text="An agriculture drone is an unmanned aerial vehicle (UAV) used in farming to monitor crops, assess field conditions, and apply inputs like fertilizers, pesticides, or seeds. Equipped with sensors and cameras, it collects data for precision farming, helping improve crop management, reduce costs, and enhance yields."
                     android:textColor="@color/fontColor"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="7dp"
                     android:text="Advantages"
+                    android:fontFamily="@font/ebnormal"
                     android:textSize="18sp"
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
@@ -155,7 +163,8 @@
 4.Increased efficiency: Drones provide detailed insights to improve decision-making and boost yields.\n\n
 5.Reduced environmental impact: Targeted application of inputs minimizes waste and reduces runoff.\n\n
 Access to difficult terrain: Drones can easily monitor areas that are hard to reach with traditional equipment.\n\n"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
             </androidx.constraintlayout.widget.ConstraintLayout>

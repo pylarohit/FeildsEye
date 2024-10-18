@@ -11,17 +11,21 @@
         android:id="@+id/appBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="3dp"
-        app:cardMaxElevation="20dp">
+        app:cardMaxElevation="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15sp"
+        app:cardElevation="15sp">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="#047022"
+        android:background="@color/background"
         android:elevation="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
+        <!--android:background="#047022"!-->
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
@@ -38,11 +42,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tittle_toolbar"
-                    android:shadowRadius="4"
+                    android:shadowRadius="2"
                     android:shadowColor="@color/black"
                     android:textStyle="bold"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#F0FDFDFB"
+                    android:fontFamily="@font/boldtext"
+                    android:textColor="#F0050505"
                     android:textSize="28dp"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>

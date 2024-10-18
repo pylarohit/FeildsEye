@@ -71,6 +71,7 @@
                     android:text="Agriculture Seeder"
                     android:textColor="@color/greenDark"
                     android:textSize="21sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +85,8 @@
                     android:text="An Agriculture Seeder is a tool that efficiently plants seeds with precision, ensuring uniform placement and improved crop yields."
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productTitle" />
@@ -96,6 +99,7 @@
                     android:text="₹ 75000.00 INR"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
@@ -116,7 +120,8 @@
                     android:layout_marginTop="7dp"
                     android:text="Product Description"
                     android:textColor="@color/fontColor"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
@@ -125,6 +130,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="18dp"
                     android:text="An Agriculture Seeder is a farming tool used to plant seeds uniformly and efficiently across fields. It ensures precise seed placement and depth, improving germination rates and crop yields while reducing labor and seed wastage.An Agriculture Seeder is a specialized farming implement designed to plant seeds accurately and efficiently across large areas.\n It is commonly attached to tractors and is equipped with mechanisms to ensure that seeds are placed at the correct depth, spacing, and row alignment. Depending on the type of seeder, it can be adjusted to plant a variety of crops like grains, vegetables, or legumes."
                     android:textColor="@color/fontColor"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +143,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="7dp"
                     android:text="Types of Seeder"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +160,8 @@
 2.Air Seeder: Uses air pressure to blow seeds into the soil, providing high-speed, large-scale planting for grains and oilseeds.\n\n
 3.Precision Seeder: Ensures that each seed is placed at an exact location, reducing seed wastage and improving germination rates.\n\n
 Agriculture seeders help improve planting efficiency, reduce labor costs, and ensure optimal seed distribution for maximum crop yield.\n\n"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/ebnormal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
             </androidx.constraintlayout.widget.ConstraintLayout>

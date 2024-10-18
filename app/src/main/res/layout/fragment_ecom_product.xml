@@ -73,6 +73,7 @@ app:layout_constraintEnd_toEndOf="parent">
         android:textColor="@color/greenDark"
         android:textSize="21sp"
         android:textStyle="bold"
+        android:fontFamily="@font/ebnormal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +87,8 @@ app:layout_constraintEnd_toEndOf="parent">
         android:text="A tractor is a versatile, powerful vehicle used in agriculture for tasks like plowing, tilling, and hauling."
         android:textColor="@color/fontColor"
         android:textStyle="bold"
+        android:fontFamily="@font/ebnormal"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/productTitle" />
@@ -97,6 +100,7 @@ app:layout_constraintEnd_toEndOf="parent">
         android:layout_marginTop="7dp"
         android:text="₹ 2.4lakh~33.9lakh"
         android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/ebnormal"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +124,7 @@ app:layout_constraintEnd_toEndOf="parent">
         android:text="Product Description"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
+        android:fontFamily="@font/ebnormal"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
@@ -128,6 +133,8 @@ app:layout_constraintEnd_toEndOf="parent">
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
+        android:fontFamily="@font/ebnormal"
+        android:textSize="15dp"
         android:text="A tractor is a robust agricultural machine designed to perform various tasks such as plowing, tilling, planting, and hauling. Built for durability and efficiency, it features a powerful engine, large rear wheels for enhanced traction, and advanced hydraulic systems for operating attachments like plows, seeders, and harvesters. Modern tractors often come equipped with GPS and automation technology, allowing for precision farming and increased productivity. Available in various models and sizes, tractors are essential for both small-scale and large-scale farming operations."
         android:textColor="@color/fontColor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,6 +147,7 @@ app:layout_constraintEnd_toEndOf="parent">
         android:layout_marginVertical="7dp"
         android:text="How to Use?"
         android:textSize="18sp"
+        android:fontFamily="@font/ebnormal"
         android:textColor="@color/greenDark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,6 +158,8 @@ app:layout_constraintEnd_toEndOf="parent">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="7dp"
+        android:fontFamily="@font/ebnormal"
+        android:textSize="15dp"
         android:text="Using a tractor involves several steps to ensure safe and effective operation:\n
 
 1.Familiarize Yourself: Read the tractor's manual to understand its controls, safety features, and attachments.\n\n
@@ -167,7 +177,6 @@ app:layout_constraintEnd_toEndOf="parent">
 7.Turn Off the Tractor: After use, disengage the implement, turn off the PTO, and power down the tractor.\n\n
 
 8.Perform Maintenance: After using the tractor, clean off debris, check fluids, and store it in a sheltered area.\n\n"
-        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -69,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:text="Mild Steel Tractor Cultivator"
+                    android:fontFamily="@font/ebnormal"
                     android:textColor="@color/greenDark"
                     android:textSize="21sp"
                     android:textStyle="bold"
@@ -81,6 +82,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="15dp"
                     android:text="A Mild Steel Tractor Cultivator is a durable farm tool used with tractors to loosen soil, control weeds, and prepare seedbeds."
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
@@ -96,6 +99,7 @@
                     android:text="₹ 38,500 INR"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
@@ -118,17 +122,22 @@
                     android:text="Product Description"
                     android:textColor="@color/fontColor"
                     android:textSize="18sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
+
                 <TextView
                     android:id="@+id/productLongDesc"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="18dp"
                     android:text="A Mild Steel Tractor Cultivator is a farming implement made from durable mild steel, designed to be attached to a tractor for soil cultivation. It is used to loosen and aerate soil, control weeds, and prepare seedbeds. With adjustable tines or shovels, it efficiently breaks up soil clumps, mixes organic matter, and enhances soil health before planting. Mild steel ensures strength, longevity, and resistance to moderate wear in agricultural operations."
                     android:textColor="@color/fontColor"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productLongDescTitle" />
                 <TextView
@@ -138,6 +147,7 @@
                     android:layout_marginVertical="7dp"
                     android:text="How to Use?"
                     android:textSize="18sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -148,6 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="7dp"
+                    android:fontFamily="@font/ebnormal"
                     android:text="Here are some common types of Mild Steel Tractor Cultivators and their uses:\n\n
 
 1.Spring Tine Cultivator:\n
@@ -169,7 +180,7 @@ Uses: Mixes soil thoroughly and creates a fine seedbed, ideal for vegetable gard
 
 Uses: Offers adjustable tine depth and width for varied soil conditions, enhancing versatility in tillage.\n\n
 These cultivators enhance soil quality and prepare land for planting, improving overall agricultural productivity.\n\n"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
             </androidx.constraintlayout.widget.ConstraintLayout>

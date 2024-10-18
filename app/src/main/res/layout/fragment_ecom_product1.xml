@@ -77,6 +77,7 @@
                     android:text="Agriculture Fertilizer"
                     android:textColor="@color/greenDark"
                     android:textSize="21sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +91,8 @@
                     android:text="Fertilizers are substances that provide essential nutrients to plants, enhancing growth and agricultural productivity."
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="17dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productTitle" />
@@ -102,6 +105,7 @@
                     android:text="₹ Product basis"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
@@ -123,6 +127,7 @@
                     android:text="Product Description"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
@@ -131,6 +136,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:fontFamily="@font/ebnormal"
+                    android:textSize="18dp"
                     android:text="Fertilizers are substances added to soil or plants to supply essential nutrients that promote growth and increase agricultural productivity. They contain key nutrients like nitrogen (N), phosphorus (P), and potassium (K), often referred to as NPK. Fertilizers can be organic (derived from plant and animal matter) or synthetic (chemically manufactured). While they help improve crop yields, excessive use can lead to environmental issues such as soil degradation, water pollution, and greenhouse gas emissions."
                     android:textColor="@color/fontColor"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +150,7 @@
                     android:layout_marginVertical="7dp"
                     android:text="Suggestion For Fertilizers"
                     android:textSize="18sp"
+                    android:fontFamily="@font/ebnormal"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -152,6 +160,7 @@
                     android:id="@+id/howToUseText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/ebnormal"
                     android:layout_marginVertical="7dp"
                     android:text="The choice of fertilizer depends on soil conditions, crop type, and nutrient deficiencies. Here are some general suggestions:\n\n
 
@@ -161,7 +170,7 @@
 4.Organic fertilizers (e.g., Compost, Manure): Enhance soil structure and provide slow-release nutrients for general crop use.\n\n
 5.Balanced NPK fertilizers (e.g., 10-10-10): Suitable for most plants, providing a balanced nutrient mix.\n\n
 Always test soil before applying fertilizers for best results."
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
             </androidx.constraintlayout.widget.ConstraintLayout>

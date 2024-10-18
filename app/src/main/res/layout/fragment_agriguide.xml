@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#5C08FF00"
+    android:background="@color/secondary"
     tools:context=".fragments.AgriguideFragment">
 
         <ScrollView
@@ -25,7 +25,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="#6800BFFF"
-                    app:cardBackgroundColor="@color/secondary"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="15sp"
                     app:cardElevation="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,6 @@
                             android:src="@drawable/ic_launcher_foreground"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -135,7 +134,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="10dp">
+                            android:layout_marginVertical="10dp"
+                            android:background="#6800BFFF"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="15sp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -153,10 +156,11 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:textAlignment="center"
-                                    android:text="Crop\nrecommendation"
+                                    android:text="Crop\nRecommendation"
                                     android:textColor="@color/fontColor"
+                                    android:fontFamily="@font/ebnormal"
+                                    android:textSize="18sp"
                                     android:layout_marginVertical="7dp"
-                                    android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -166,7 +170,11 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/cat2"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="10dp">
+                            android:layout_marginVertical="10dp"
+                            android:background="#6800BFFF"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="15sp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -187,7 +195,8 @@
                                     android:text="Soil \nFertilizer"
                                     android:textAlignment="center"
                                     android:layout_marginVertical="7dp"
-                                    android:textSize="16sp"
+                                    android:fontFamily="@font/ebnormal"
+                                    android:textSize="18sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -197,7 +206,12 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/cat3"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="10dp">
+                            android:layout_marginVertical="10dp"
+                            android:background="#6800BFFF"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="15sp"
+                            >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -218,7 +232,8 @@
                                     android:layout_gravity="center"
                                     android:textAlignment="center"
                                     android:text="Soil \nSuitability"
-                                    android:textSize="16sp"
+                                    android:fontFamily="@font/ebnormal"
+                                    android:textSize="18sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -230,8 +245,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
-
-                            android:layout_marginVertical="10dp">
+                            android:layout_marginVertical="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="15sp"
+                            app:cardElevation="15sp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -239,7 +256,7 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="100dp"
+                                    android:layout_width="124dp"
                                     android:layout_height="100dp"
                                     android:scaleType="fitXY"
                                     android:src="@drawable/fruits" />
@@ -247,27 +264,39 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginVertical="7dp"
                                     android:textColor="@color/fontColor"
-                                    android:text="Fruits"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:layout_marginVertical="7dp"
+                                    android:layout_gravity="center"
+                                    android:textAlignment="center"
+                                    android:text="soil \n Health"
+                                    android:fontFamily="@font/ebnormal"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </HorizontalScrollView>
 
-
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/carousel"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="15sp"
+    app:cardElevation="15sp"
+    android:layout_marginTop="10dp"
+    app:layout_constraintTop_toBottomOf="@id/categoryHorizontal">
                 <pl.droidsonroids.gif.GifImageView
-                    android:id="@+id/carousel"
+
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginVertical="10dp"
                     android:background="#090909"
                     android:scaleType="fitXY"
                     android:src="@drawable/guide"
-                    app:layout_constraintTop_toBottomOf="@id/categoryHorizontal" />
+                    />
+</com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/productsTitle"
@@ -276,6 +305,7 @@
                     android:layout_marginVertical="14dp"
                     android:textColor="@color/fontColor"
                     android:text="Products"
+                    android:fontFamily="@font/ebnormal"
                     android:textSize="21sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"

@@ -22,7 +22,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/weatherCard"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="170dp"
                     android:layout_marginTop="10dp"
                     android:background="#6800BFFF"
                     app:cardBackgroundColor="@color/white"
@@ -37,68 +37,94 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/weathIconImageWeathFrag"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginStart="20dp"
-                            android:src="@drawable/ic_launcher_foreground"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            <!-- City Input -->
+                            <EditText
+                                android:id="@+id/cityInput"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter City"
+                                android:padding="10dp"
+                                android:textColor="@color/fontColor"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/fetchWeatherButton"                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="16dp" />
 
-                        <TextView
-                            android:id="@+id/weatherCityTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textColor="@color/fontColor"
-                            android:textSize="21sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@id/windTextWeathFrag"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
-                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/weathTempTextWeathFrag"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:text="- C"
-                            android:textColor="@color/fontColor"
-                            android:textSize="21sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@id/windTextWeathFrag"
-                            app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
-                            app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
+                            <Button
+                                android:id="@+id/fetchWeatherButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Get Weather"
+                                android:textColor="@color/white"
+                                android:backgroundTint="@color/primary"
+                                app:layout_constraintStart_toEndOf="@id/cityInput"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_margin="10dp"
+                                app:layout_constraintEnd_toEndOf="parent" />
 
-                        <TextView
-                            android:id="@+id/windTextWeathFrag"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Wind : - km/h"
-                            android:textColor="@color/fontColor"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toTopOf="@id/humidityTextWeathFrag"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/weathTempTextWeathFrag"
-                            app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
 
-                        <TextView
-                            android:id="@+id/humidityTextWeathFrag"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Humidity : - %"
-                            android:textColor="@color/fontColor"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="@id/windTextWeathFrag"
-                            app:layout_constraintTop_toBottomOf="@id/windTextWeathFrag" />
+                                    <ImageView
+                                        android:id="@+id/weathIconImageWeathFrag"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:layout_marginStart="20dp"
+                                        android:src="@drawable/ic_launcher_foreground"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/cityInput"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                                    <TextView
+                                        android:id="@+id/weatherCityTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="-"
+                                        android:textColor="@color/fontColor"
+                                        android:textSize="21sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toTopOf="@id/windTextWeathFrag"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
+                                        app:layout_constraintTop_toBottomOf="@id/fetchWeatherButton"/>
+
+                                    <TextView
+                                        android:id="@+id/weathTempTextWeathFrag"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="- °C"
+                                        android:textColor="@color/fontColor"
+                                        android:textSize="21sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@id/windTextWeathFrag"
+                                        app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
+                                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
+
+                                    <TextView
+                                        android:id="@+id/windTextWeathFrag"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Wind : - km/h"
+                                        android:textColor="@color/fontColor"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toTopOf="@id/humidityTextWeathFrag"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/weathTempTextWeathFrag"
+                                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
+
+                                    <TextView
+                                        android:id="@+id/humidityTextWeathFrag"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Humidity : - %"
+                                        android:textColor="@color/fontColor"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="@id/windTextWeathFrag"
+                                        app:layout_constraintTop_toBottomOf="@id/windTextWeathFrag" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:id="@+id/articlesTitle"

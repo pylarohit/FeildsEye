@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -9,9 +7,10 @@ plugins {
 }
 
 android {
-
     namespace = "com.rohit.feildseye"
     compileSdk = 34
+
+
 
     defaultConfig {
         applicationId = "com.rohit.feildseye"
@@ -19,10 +18,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -39,9 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures.viewBinding = true
 
+    buildFeatures.viewBinding = true
 }
+
 
 dependencies {
 
@@ -62,6 +60,19 @@ dependencies {
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
     implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
     implementation("com.google.firebase:firebase-analytics")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
+
+
+    
+
 
 
 }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.rohit.feildseye.R
@@ -23,8 +24,17 @@ class AgriguideFragment : Fragment() {
     private var _binding: FragmentAgriguideBinding? = null
     private val binding get() = _binding!!
     private lateinit var weatherService: WeatherService
-
     private val apiKey = "d0bce3b50d931baf6b3867064f44b420"
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    lateinit var ecommerceAdapter: EcommerceAdapter
+    private val itemsList = arrayListOf(
+        "Agriculture Tractor",
+        "Agriculture Fertilizer",
+        "Mild Steel Tractor Cultivator",
+        "Agriculture Drone",
+        "Agriculture Seeder"
+    )
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +47,35 @@ class AgriguideFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Set up RecyclerView
+        ecommerceAdapter = EcommerceAdapter(itemsList)
+        linearLayoutManager = LinearLayoutManager(requireContext())
+        binding.ecommrcyclr.layoutManager = linearLayoutManager
+        binding.ecommrcyclr.adapter = ecommerceAdapter
+
+        binding.cat1.setOnClickListener {
+            findNavController().navigate(R.id.action_agriguideFragment_to_RecommendFragment)
+        }
+        binding.cat2.setOnClickListener {
+            findNavController().navigate(R.id.action_agriguideFragment_to_SoilFertilizerFragment)
+        }
+        binding.cat3.setOnClickListener {
+            findNavController().navigate(R.id.action_agriguideFragment_to_SoilQualityFragment)
+        }
+
+        // Set up RecyclerView item click listener
+        ecommerceAdapter.setOnItemClickListener(object : EcommerceAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                when (position) {
+                    0 -> findNavController().navigate(R.id.action_agriguideFragment_to_ecomProductFragment)
+                    1 -> findNavController().navigate(R.id.action_agriguideFragment_to_ecomProduct1Fragment)
+                    2 -> findNavController().navigate(R.id.action_agriguideFragment_to_ecomProduct2Fragment)
+                    3 -> findNavController().navigate(R.id.action_agriguideFragment_to_ecomProduct3Fragment)
+                    4 -> findNavController().navigate(R.id.action_agriguideFragment_to_ecomProduct4Fragment)
+                }
+            }
+        })
+
         // Set up Retrofit for weather API
         weatherService = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/data/2.5/")
@@ -45,7 +84,7 @@ class AgriguideFragment : Fragment() {
             .create(WeatherService::class.java)
 
 
-        fetchWeatherData("")
+        fetchWeatherData("delhi")
 
         // Fetch weather on button click with user-entered city
         binding.fetchWeatherButton.setOnClickListener {

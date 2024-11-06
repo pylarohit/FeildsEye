@@ -50,6 +50,15 @@ class MainFragment : Fragment() {
         binding?.soilagriloans?.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_agriloansFragment)
         }
+        binding?.soilwaterpump?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_waterpumpFragment)
+        }
+        binding?.soilmoisture?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_moistureFragment)
+        }
+        binding?.birdsCardView?.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_birdsalarmFragment)
+        }
     }
 
     companion object {

@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.agriloansFragment -> binding?.tittleToolbar?.setText("Agri Loans")
                 R.id.agriguideFragment -> binding?.tittleToolbar?.setText("Agri Guide")
                 R.id.ecomProductFragment -> binding?.tittleToolbar?.setText("Agri Products")
+                R.id.moistureFragment -> binding?.tittleToolbar?.setText("Soil Moisture")
+                R.id.waterPumpFragment -> binding?.tittleToolbar?.setText("Water Pump")
+                R.id.birdsAlarmFragment -> binding?.tittleToolbar?.setText("Birds Alarm")
             }
         }
     }

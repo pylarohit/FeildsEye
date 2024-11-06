@@ -24,6 +24,27 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_waterpumpFragment"
+            app:destination="@id/waterPumpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_moistureFragment"
+            app:destination="@id/moistureFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_birdsalarmFragment"
+            app:destination="@id/birdsAlarmFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 
 
@@ -200,5 +221,20 @@
         android:name="com.rohit.feildseye.fragments.SoilQualityFragment"
         android:label="fragment_soil_quality"
         tools:layout="@layout/fragment_soil_quality" />
+    <fragment
+        android:id="@+id/waterPumpFragment"
+        android:name="com.rohit.feildseye.fragments.WaterPumpFragment"
+        android:label="fragment_water_pump"
+        tools:layout="@layout/fragment_water_pump" />
+    <fragment
+        android:id="@+id/birdsAlarmFragment"
+        android:name="com.rohit.feildseye.fragments.BirdsAlarmFragment"
+        android:label="fragment_birds_alarm"
+        tools:layout="@layout/fragment_birds_alarm" />
+    <fragment
+        android:id="@+id/moistureFragment"
+        android:name="com.rohit.feildseye.fragments.MoistureFragment"
+        android:label="fragment_moisture"
+        tools:layout="@layout/fragment_moisture" />
 
 </navigation>

@@ -3,14 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/secondary"
     tools:context=".fragments.WaterPumpFragment">
 
-
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardElevation="80dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:layout_gravity="center"
             android:padding="24dp"
             android:background="@color/white"
@@ -31,9 +35,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Water Pump Control"
+                android:fontFamily="@font/boldtext"
+                android:textColor="#F0050505"
+                android:shadowRadius="2"
+                android:shadowColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
                 android:layout_marginTop="16dp"
                 android:gravity="center"/>
 
@@ -42,7 +49,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Control the water pump remotely"
-                android:textSize="16sp"
+                android:textSize="17sp"
+                android:fontFamily="@font/boldtext"
+                android:shadowRadius="2"
+                android:shadowColor="@color/black"
                 android:textColor="#666666"
                 android:layout_marginTop="8dp"
                 android:gravity="center" />
@@ -52,6 +62,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Turn On Pump"
+                android:fontFamily="@font/boldtext"
+                android:textSize="17dp"
+                android:shadowRadius="2"
+                android:shadowColor="@color/black"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#66BB6A"
                 android:layout_marginTop="24dp"
@@ -64,6 +78,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Turn Off Pump"
+                android:fontFamily="@font/boldtext"
+                android:textSize="17dp"
+                android:shadowColor="@color/black"
+                android:shadowRadius="2"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#EF5350"
                 android:layout_marginTop="12dp"
@@ -73,4 +91,5 @@
                 />
 
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

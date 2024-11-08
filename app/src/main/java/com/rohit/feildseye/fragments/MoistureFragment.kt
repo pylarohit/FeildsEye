@@ -21,7 +21,7 @@ import com.rohit.feildseye.databinding.FragmentMoistureBinding
 class MoistureFragment : Fragment() {
 
     private var binding: FragmentMoistureBinding? = null
-    private val PHONE_NUMBER = "7993547924" // Replace with the SIM900A number
+    private val PHONE_NUMBER = "8829922858" // Replace with the SIM900A number
     private val REQUEST_CODE_SMS_PERMISSION = 102
 
     override fun onCreateView(
@@ -35,7 +35,7 @@ class MoistureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Request SMS permissions if not already granted
+
         requestSmsPermissions()
 
         binding?.checkMoistureButton?.setOnClickListener {

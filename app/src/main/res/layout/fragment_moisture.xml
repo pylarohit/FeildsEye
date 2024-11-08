@@ -3,63 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/secondary"
     tools:context=".fragments.MoistureFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        app:cardElevation="80dp"
+        app:cardCornerRadius="12dp">
 
-        <TextView
-            android:id="@+id/moistureTitleTextView"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:shadowRadius="2"
-            android:shadowColor="@color/black"
-            android:textStyle="bold"
-            android:fontFamily="@font/boldtext"
-            android:textColor="#F0050505"
-            android:textSize="28dp"
-            android:text="Soil Moisture Level"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"/>
+            android:padding="40dp">
 
-        <ProgressBar
-            android:id="@+id/moistureProgressBar"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="0"
-            android:progressDrawable="@drawable/progress_background"
-            android:layout_centerInParent="true"/>
+            <TextView
+                android:id="@+id/moistureTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowRadius="4"
+                android:shadowColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/boldtext"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:text="Soil Moisture Level"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp" />
 
-        <TextView
-            android:id="@+id/moistureLevelTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="--%"
-            android:textSize="24sp"
-            android:textColor="@android:color/black"/>
+            <ProgressBar
+                android:id="@+id/moistureProgressBar"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_background"
+                android:layout_centerInParent="true" />
 
-        <Button
-            android:id="@+id/checkMoistureButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check Moisture Level"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#66BB6A"
-            android:paddingVertical="12dp"
-            android:paddingHorizontal="32dp"
-            android:layout_below="@id/moistureProgressBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/all_buttons" />
+            <TextView
+                android:id="@+id/moistureLevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="--%"
+                android:textSize="20sp"
+                android:textColor="@android:color/black" />
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/checkMoistureButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check Moisture Level"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/boldtext"
+                android:textSize="17dp"
+                android:shadowRadius="2"
+                android:shadowColor="@color/black"
+                android:backgroundTint="#66BB6A"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="28dp"
+                android:layout_below="@id/moistureProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/all_buttons" />
 
-
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

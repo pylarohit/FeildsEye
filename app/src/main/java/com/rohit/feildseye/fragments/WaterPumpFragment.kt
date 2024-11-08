@@ -18,7 +18,7 @@ class WaterPumpFragment : Fragment() {
     private lateinit var binding: FragmentWaterPumpBinding
 
     companion object {
-        private const val PHONE_NUMBER = "7993547924" // Replace with SIM900A number
+        private const val PHONE_NUMBER = "8829922858" // Replace with SIM900A number
         private const val SMS_PERMISSION_CODE = 101
 
         @JvmStatic

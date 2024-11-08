@@ -16,7 +16,7 @@ import com.rohit.feildseye.databinding.FragmentBirdsAlarmBinding
 class BirdsAlarmFragment : Fragment() {
 
     private var binding: FragmentBirdsAlarmBinding? = null
-    private val PHONE_NUMBER = "7993547924" // Replace with the actual SIM900A number
+    private val PHONE_NUMBER = "8829922858" // Replace with the actual SIM900A number
     private val SMS_PERMISSION_CODE = 103
 
     override fun onCreateView(

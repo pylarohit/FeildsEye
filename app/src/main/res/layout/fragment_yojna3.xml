@@ -156,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="The Paramparagat Krishi Vikas Yojana (PKVY), launched in 2015, is an extended component of Soil Health Management (SHM) under the Centrally Sponsored Scheme (CSS), National Mission on Sustainable Agriculture (NMSA). PKVY aims at supporting and promoting organic farming, in turn resulting in improvement of soil health."
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/objectiveofscheme"
 
@@ -180,7 +180,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="To avail benefits of the Paramparagat Krishi Vikas Yojana (PKVY), you may need to provide the following documents:\n
+-Aadhaar number\n
+-Land documents\n
+-Caste certificate (SC/ST/OBC only)\n
+-Phone details\n
+-Bank details\n
+-Photographs\n
+-DPR"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/RequiredDocumenttoApply"
 
@@ -204,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="The PKVY aims to promote organic farming and improve soil health. The scheme provides financial assistance to farmers for the procurement and management of organic inputs. It also offers training programs and exposure visits to farmers."
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/EligibilityCriteria"
 

@@ -1,108 +1,114 @@
 package com.rohit.feildseye.fragments
 
-import android.Manifest
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.telephony.SmsManager
-import android.telephony.SmsMessage
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
+import com.rohit.feildseye.R
 import com.rohit.feildseye.databinding.FragmentMoistureBinding
+import kotlinx.coroutines.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import kotlin.coroutines.CoroutineContext
 
-class MoistureFragment : Fragment() {
+data class MoistureData(val soilMoisture: Int?)
 
-    private var binding: FragmentMoistureBinding? = null
-    private val PHONE_NUMBER = "8829922858" // Replace with the SIM900A number
-    private val REQUEST_CODE_SMS_PERMISSION = 102
+class MoistureFragment : Fragment(), CoroutineScope {
+
+    private var _binding: FragmentMoistureBinding? = null
+    private val binding get() = _binding!!
+
+    private val client = OkHttpClient()
+    private val job = Job()
+
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main + job
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMoistureBinding.inflate(inflater, container, false)
-        return binding?.root
+    ): View {
+        _binding = FragmentMoistureBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        requestSmsPermissions()
-
-        binding?.checkMoistureButton?.setOnClickListener {
-            requestMoistureData()
-        }
+        fetchMoistureData()
     }
 
-    private fun requestSmsPermissions() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECEIVE_SMS)
-            != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS)
-            != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(Manifest.permission.RECEIVE_SMS, Manifest.permission.SEND_SMS),
-                REQUEST_CODE_SMS_PERMISSION
-            )
+    private fun fetchMoistureData() {
+        if (!isInternetAvailable()) {
+            Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_SHORT).show()
+            Log.e("MoistureFragment", "No network available")
+            return
         }
-    }
 
-    private fun requestMoistureData() {
-        try {
-            val smsManager = SmsManager.getDefault()
-            smsManager.sendTextMessage(PHONE_NUMBER, null, "CHECK_MOISTURE", null, null)
-            Toast.makeText(requireContext(), "Requesting moisture data...", Toast.LENGTH_SHORT).show()
-        } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Failed to request moisture data.", Toast.LENGTH_SHORT).show()
-        }
-    }
+        launch {
+            val request = Request.Builder()
+                .url("http://192.168.115.254/")
+                .build()
 
-    // BroadcastReceiver to handle incoming SMS messages
-    private val smsReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            val bundle = intent.extras
-            if (bundle != null) {
-                val pdus = bundle["pdus"] as Array<*>
-                for (pdu in pdus) {
-                    val message = SmsMessage.createFromPdu(pdu as ByteArray)
-                    val sender = message.displayOriginatingAddress
-                    if (sender == PHONE_NUMBER) {
-                        val moistureData = message.messageBody
-                        displayMoistureData(moistureData)
+            withContext(Dispatchers.IO) {
+                try {
+                    val response = client.newCall(request).execute()
+                    val responseData = response.body?.string()
+
+                    if (!responseData.isNullOrEmpty()) {
+                        withContext(Dispatchers.Main) {
+                            parseAndDisplayData(responseData)
+                        }
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(requireContext(), "Empty response from server", Toast.LENGTH_SHORT).show()
+                        }
+                        Log.e("MoistureFragment", "Empty server response")
                     }
+                } catch (e: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                    Log.e("MoistureFragment", "Network error: ${e.message}", e)
                 }
             }
         }
     }
 
-    private fun displayMoistureData(data: String) {
-        // Assuming the data is a percentage, e.g., "Moisture: 75%"
-        val moisturePercentage = data.replace("[^0-9]".toRegex(), "").toIntOrNull() ?: 0
-        binding?.moistureLevelTextView?.text = "$moisturePercentage%"
-        binding?.moistureProgressBar?.progress = moisturePercentage
+    private fun parseAndDisplayData(responseData: String) {
+        try {
+            val moistureData = Gson().fromJson(responseData, MoistureData::class.java)
+
+            val moistureValue = moistureData.soilMoisture ?: "N/A"
+            binding.moistureLevelTextView.text = getString(R.string.soil_moisture_format, moistureValue)
+
+        } catch (e: JsonSyntaxException) {
+            Toast.makeText(requireContext(), "Error parsing data", Toast.LENGTH_SHORT).show()
+            Log.e("MoistureFragment", "JSON parsing error: ${e.message}", e)
+        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        requireActivity().registerReceiver(smsReceiver, IntentFilter("android.provider.Telephony.SMS_RECEIVED"))
-    }
-
-    override fun onPause() {
-        super.onPause()
-        requireActivity().unregisterReceiver(smsReceiver)
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager =
+            requireContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+        return capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
+        _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
     }
 }

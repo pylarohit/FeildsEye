@@ -159,10 +159,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="National Mission for Sustainable Agriculture (NMSA) has been formulated for enhancing agricultural productivity especially in rainfed areas focusing on integrated farming, water use efficiency, soil health management and synergizing resource conservation."
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/objectiveofscheme"
-
                     android:textSize="18sp"/>
 
                 <TextView
@@ -183,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="To apply for the National Mission for Sustainable Agriculture (NMSA) scheme, farmers need to contact the Rural Agricultural Extension Officer in their area with the following documents: A photocopy of the farmer's B1 khasra or loan book, Aadhar card, and Bank passbook"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/RequiredDocumenttoApply"
 
@@ -206,7 +205,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="To be eligible for the National Mission for Sustainable Agriculture (NMSA), farmers must meet the following requirements:\n
+-Have a soil health card.\n
+-Be part of a cluster of at least 100 hectares of rainfed area.\n
+-The cluster area should be demarcated from one or two villages.\n
+-The cluster should have a predominant acceptance for a particular Integrated Farming System (IFS).\n
+-At least 25% of the farming system area should be covered under On Farm Water Management.\n
+"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/EligibilityCriteria"
                     android:fontFamily="@font/ebnormal"

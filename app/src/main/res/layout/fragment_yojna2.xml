@@ -64,7 +64,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jal shakti Mantralaya"
+                    android:text="Agriculture and Farmers' Welfare"
                     android:textSize="18sp"
                     android:fontFamily="@font/ebnormal"
                     app:layout_constraintStart_toEndOf="@id/ministry"
@@ -90,7 +90,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2600 Crore"
+                    android:text="229.95 crore"
                     android:textSize="18sp"
                     android:fontFamily="@font/ebnormal"
                     app:layout_constraintStart_toEndOf="@id/Budget"
@@ -158,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ebnormal"
                     android:layout_marginStart="10dp"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="The primary objectives of the Soil Health Card Scheme include improving soil fertility and promoting sustainable agriculture by providing farmers with specific soil health information. Regular assessment of soil health to monitor the nutrient status and ensure balanced use of fertilizers."
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/objectiveofscheme"
 
@@ -182,7 +182,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="The documents required for the Soil Health Card (SHC) scheme are:\n
+-Proof of identity, such as an Aadhar card or voter ID.\n
+-Proof of land ownership.\n
+-Proof of payment and submission of soil sample.\n
+-Any other documents that may be required "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/RequiredDocumenttoApply"
 
@@ -206,7 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/ebnormal"
-                    android:text="objective of scheme objective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of schemeobjective of scheme"
+                    android:text="There are no specific eligibility criteria for the Soil Health Card (SHC) scheme, as the goal is to cover as many farmers as possible in India. All farmers can apply for the SHC scheme. "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/EligibilityCriteria"
 

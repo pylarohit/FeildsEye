@@ -1,83 +1,84 @@
 package com.rohit.feildseye.fragments
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.telephony.SmsManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.rohit.feildseye.databinding.FragmentBirdsAlarmBinding
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import java.io.IOException
 
 class BirdsAlarmFragment : Fragment() {
 
-    private var binding: FragmentBirdsAlarmBinding? = null
-    private val PHONE_NUMBER = "8829922858" // Replace with the actual SIM900A number
-    private val SMS_PERMISSION_CODE = 103
+    private lateinit var binding: FragmentBirdsAlarmBinding
+
+    companion object {
+        private const val ESP32_BASE_URL = "http://192.168.115.254"
+
+        @JvmStatic
+        fun newInstance() = BirdsAlarmFragment()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBirdsAlarmBinding.inflate(inflater, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Request SMS permission if not already granted
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.SEND_SMS)
-            != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(Manifest.permission.SEND_SMS),
-                SMS_PERMISSION_CODE
-            )
-        }
-
         // Set up button listeners
-        binding?.btnTurnOnAlarm?.setOnClickListener {
-            sendSMS("ALARM_ON")
+        binding.btnTurnOnAlarm.setOnClickListener {
+            sendCommandToESP32("on")
         }
 
-        binding?.btnTurnOffAlarm?.setOnClickListener {
-            sendSMS("ALARM_OFF")
-        }
-    }
-
-    private fun sendSMS(message: String) {
-        try {
-            val smsManager: SmsManager = SmsManager.getDefault()
-            smsManager.sendTextMessage(PHONE_NUMBER, null, message, null, null)
-            Toast.makeText(requireContext(), "SMS sent: $message", Toast.LENGTH_SHORT).show()
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Toast.makeText(requireContext(), "SMS failed to send.", Toast.LENGTH_SHORT).show()
+        binding.btnTurnOffAlarm.setOnClickListener {
+            sendCommandToESP32("off")
         }
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        if (requestCode == SMS_PERMISSION_CODE) {
-            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                Toast.makeText(requireContext(), "SMS Permission Granted", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), "SMS Permission Denied", Toast.LENGTH_SHORT).show()
+    private fun sendCommandToESP32(state: String) {
+        // Use toHttpUrlOrNull() to parse URL safely
+        val baseUrl = ESP32_BASE_URL.toHttpUrlOrNull()
+        if (baseUrl == null) {
+            Toast.makeText(requireContext(), "Invalid Base URL", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Build the full URL with query parameters
+        val url = baseUrl.newBuilder()
+            .addPathSegment("buzzer")
+            .addQueryParameter("state", state)
+            .build()
+            .toString()
+
+        val client = OkHttpClient()
+        val request = Request.Builder().url(url).build()
+
+        Thread {
+            try {
+                val response = client.newCall(request).execute()
+                val message = if (response.isSuccessful) {
+                    "Command sent: $state"
+                } else {
+                    "Failed to send command"
+                }
+                requireActivity().runOnUiThread {
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+                requireActivity().runOnUiThread {
+                    Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        }.start()
     }
 }

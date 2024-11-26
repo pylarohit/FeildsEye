@@ -112,7 +112,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text"
 
-                        android:hint="P %"
+                        android:hint="Potassium %"
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:padding="15dp"
@@ -128,7 +128,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text"
 
-                        android:hint="K %"
+                        android:hint="Calcium %"
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:padding="15dp"
@@ -152,7 +152,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text"
 
-                        android:hint="N %"
+                        android:hint="Nitrogen %"
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:padding="15dp"

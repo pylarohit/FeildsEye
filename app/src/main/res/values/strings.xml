@@ -6,4 +6,5 @@
     <string name="crops_we_recommend">Crops we Recommend</string>
     <string name="soil_fertilizer_content">We detect your crop and suggest appropriate fertilizers by identifying your location, soil type, air temperature around you, and the cultivated crop.</string>
     <string name="soil_suitability_content">We help you judge whether the soil is suitable for cultivation or not by analyzing it</string>
+    <string name="soil_moisture_format">%s</string>
 </resources>
